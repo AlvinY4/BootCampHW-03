@@ -8,10 +8,14 @@ var specialCharacters = "!@#$%^&*()-+=_<>;:?/{}~";
 
 function generatePassword() {
 
+  var password = "";
+  var passwordCharacter = "";
+
   //prompt the user for password criteria
   var passwordLength = prompt("How man characters would you like your password to contain?");
   passwordLength = parseInt(passwordLength);
 
+ //password length 8 < 128
   if (passwordLength < 8) {
     alert ("password must at least have 8 characters");
     return; 
@@ -21,13 +25,44 @@ function generatePassword() {
     alert ("password cannot exceed 128 characters")
     return;  
   }
-  //password length 8 < 128
-  //confrim to whether not to include lowercase, uppercase, numbers, special characters
-  // validate input 
-  //gerneate password based on criteria
-  //display generated password
-  return "Generated password will go here" 
-}
+  
+  //confrim to whether not to include lowercase letters
+  var lowercaseOption = confirm("Click OK to confirm lowercase letters");
+
+  if (lowercaseOption) {
+    passwordCharacter += lowercaseCharacters;
+  }
+
+  // confirm to whether not to include uppercase letters 
+  var uppercaseOption = confirm("Click OK to confirm uppercase letters");
+
+  if (uppercaseOption) {
+    passwordCharacter += uppercaseCharacters; 
+  }
+
+  // confirm to wether not to include special characters 
+  var specialcharactersOption = confirm("Click OK to confirm to adding special characters");
+
+  if (specialcharactersOption) {
+    passwordCharacter += specialCharacters; 
+  }
+
+  // confirm to whether not to include numbers 
+  var numbersOption = confirm("Click OK to confirm adding numeric characters");
+
+  if (numbersOption) {
+    passwordCharacter += numbers; 
+  }
+
+  for (var i = 0; i < passwordLength; i++) {
+    password = passwordCharacter[Math.floor(Math.random() * passwordCharacter.length)]
+  }
+
+  // // validate input 
+  // //gerneate password based on criteria
+  // //display generated password
+  // return "Generated password will go here" 
+} 
 
 // Write password to the #password input
 function writePassword() {
