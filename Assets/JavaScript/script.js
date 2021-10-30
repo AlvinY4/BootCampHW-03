@@ -57,6 +57,14 @@ function generatePassword() {
 
   console.log(passwordCharacter) 
 
+  // gernate password and show it in box 
+  for (var i = 0; i <= passwordLength; i++) {
+    var password = password + passwordCharacter[Math.floor(Math.random() * passwordCharacter.length)]; 
+    console.log(password)
+  }
+
+  return password; 
+
 } 
 
 // Write password to the #password input
