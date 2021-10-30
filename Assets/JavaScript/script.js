@@ -1,5 +1,5 @@
 // Assignment Code
-var generateBtn = document.getElementById("generate"); 
+var generateBtn = document.querySelector("#generate");  
 
 var uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz";
@@ -46,6 +46,7 @@ function generatePassword() {
   if (specialcharactersOption) {
     passwordCharacter += specialCharacters; 
   }
+  
 
   // confirm to whether not to include numbers 
   var numbersOption = confirm("Click OK to confirm adding numeric characters");
@@ -54,20 +55,14 @@ function generatePassword() {
     passwordCharacter += numbers; 
   }
 
-  for (var i = 0; i < passwordLength; i++) {
-    password = passwordCharacter[Math.floor(Math.random() * passwordCharacter.length)]
-  }
+  console.log(passwordCharacter) 
 
-  // // validate input 
-  // //gerneate password based on criteria
-  // //display generated password
-  // return "Generated password will go here" 
 } 
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.getElementById("password"); 
+  var passwordText = document.querySelector("#password"); 
 
   passwordText.value = password;
 
