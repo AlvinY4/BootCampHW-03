@@ -7,3 +7,4 @@ https://alviny4.github.io/BootCampHW-03/
 
 ## website Screenshot 
 
+<img  width="964" src=https://github.com/AlvinY4/BootCampHW-03/blob/main/Assets/images/Alvin-Y-Password-generator-screenshot.png>  
